@@ -32,10 +32,7 @@
         name:
           - MariaDB-server
         state: latest
-    - name: start MariaDB service
-      systemd:
-        name: mariadb
-        state: started
+    
     - name: verify installation
       ansible.builtin.command: mysql --version
       register: mysql_version
