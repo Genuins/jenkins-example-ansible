@@ -19,7 +19,7 @@
         permanent: yes
         state: enabled
         immediate: yes
-   - name: Install MariaDB repository 10.3
+     - name: Install MariaDB repository 10.3
         apt_repository: repo='deb [arch=amd64] http://mirror.zol.co.zw/mariadb/repo/10.3/ubuntu xenial main' state=present
     
       - name: Add repository key to the system
