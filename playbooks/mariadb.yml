@@ -103,7 +103,9 @@
       login_host="localhost"
       login_password="{{mysql_root_password.stdout}}"
     when: is_root_password_set.rc == 0
-    with_items: - "127.0.0.1" - "::1"
+    with_items: 
+      - "127.0.0.1"
+      - "::1"
 
   - name: Inform user of mysql root password
     debug:
