@@ -14,18 +14,18 @@
 
   - name: Add MariaDB Repo
     apt_repository:
-    filename: MariaDB-10.2
-    repo: deb [arch=amd64,i386] http://mirror.rackspeed.de/mariadb.org/repo/10.2/ubuntu trusty main
-    state: present
+      filename: MariaDB-10.2
+      repo: deb [arch=amd64,i386] http://mirror.rackspeed.de/mariadb.org/repo/10.2/ubuntu trusty main
+      state: present
 
   - name: Get Key for Percona Repo
     command: apt-key adv --keyserver keys.gnupg.net --recv-keys 1C4CBDCDCD2EFD2A
 
   - name: Add Percona Tools Repo
     apt_repository:
-    filename: Percona
-    repo: deb http://repo.percona.com/apt trusty main
-    state: present
+      filename: Percona
+      repo: deb http://repo.percona.com/apt trusty main
+      state: present
 
   - name: Install MariaDB Packages
     apt: name={{item}} state=installed default_release=trusty update_cache=yes
